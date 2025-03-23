@@ -73,7 +73,8 @@ install_template() {
     rm -rf "$TEMP_DIR"
 
 # 顯示完成訊息
-    dialog --title "＊.°·完成安裝＊.°·" --msgbox "\n恭喜你，可以開始瀏覽你的「${TEMPLATE_NAME}」網站了~\n\n請在瀏覽器中輸入 http://10.167.214.28 進行訪問。" 10 60
+    myip=`ip route get 1 | awk '{print $7; exit}'`
+    dialog --title "＊.°·完成安裝＊.°·" --msgbox "\n恭喜你，可以開始瀏覽你的「${TEMPLATE_NAME}」網站了~\n\n請在瀏覽器中輸入 http://$myip 進行訪問。" 10 60
 }
 
 # 執行安裝
